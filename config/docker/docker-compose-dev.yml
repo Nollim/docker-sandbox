@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+  php:
+    build:
+      context: ${PROJECT_ROOT}
+      dockerfile: config/docker/dockerfiles/httpd/Dockerfile
+    volumes:
+      - ${PROJECT_ROOT}/drupal/:/var/www/html
+    ports:
+      - 80
+    restart: "always"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.whoami.rule=Host(`drupal.wework`)"
+
+  mysql:
+    build:
+      context: ${PROJECT_ROOT}
+      dockerfile: config/docker/dockerfiles/mysql/Dockerfile
+    environment:
+      MYSQL_ROOT_PASSWORD: ${CI_PROJECT_NAME}
+      MYSQL_DATABASE: ${CI_PROJECT_NAME}
+      MYSQL_USER: ${CI_PROJECT_NAME}
+      MYSQL_PASSWORD: ${CI_PROJECT_NAME}
+    restart: always
+    labels:
+      - "traefik.enable=false"
+
+  traefik:
+    image: traefik
+    command:
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80"
+    ports:
+      - "80:80"
+      - "8080:8080"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"

@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+
+  httpd:
+    image: nollim/drupal
+    ports:
+      - "80:80"
+
+  mysql:
+    image: mysql:5.6
+    environment:
+      MYSQL_ROOT_PASSWORD: drupal-wework
+      MYSQL_DATABASE: drupal-wework
+      MYSQL_USER: drupal-wework
+      MYSQL_PASSWORD: drupal-wework
+    restart: always

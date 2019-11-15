@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+
+  php:
+    build:
+      context: ${PROJECT_ROOT}
+      dockerfile: config/docker/dockerfiles/prod/httpd/Dockerfile
+    ports:
+      - 80
+    restart: "always"
+
+  mysql:
+    image: mysql:5.6
+    environment:
+      MYSQL_ROOT_PASSWORD: drupal-wework
+      MYSQL_DATABASE: drupal-wework
+      MYSQL_USER: drupal-wework
+      MYSQL_PASSWORD: drupal-wework
+    restart: always
