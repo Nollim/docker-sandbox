@@ -3,10 +3,10 @@ version: '3'
 services:
   php:
     build:
-      context: ${PROJECT_ROOT}
+      context: ../../
       dockerfile: config/docker/dockerfiles/httpd/Dockerfile
     volumes:
-      - ${PROJECT_ROOT}/drupal/:/var/www/html
+      - ../../drupal/:/var/www/html
     ports:
       - 80
     restart: "always"
@@ -16,13 +16,13 @@ services:
 
   mysql:
     build:
-      context: ${PROJECT_ROOT}
+      context: ../../
       dockerfile: config/docker/dockerfiles/mysql/Dockerfile
     environment:
-      MYSQL_ROOT_PASSWORD: ${CI_PROJECT_NAME}
-      MYSQL_DATABASE: ${CI_PROJECT_NAME}
-      MYSQL_USER: ${CI_PROJECT_NAME}
-      MYSQL_PASSWORD: ${CI_PROJECT_NAME}
+      MYSQL_ROOT_PASSWORD: drupal
+      MYSQL_DATABASE: drupal
+      MYSQL_USER: drupal
+      MYSQL_PASSWORD: drupal
     restart: always
     labels:
       - "traefik.enable=false"
