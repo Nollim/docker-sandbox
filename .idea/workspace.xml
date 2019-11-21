@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4bf81c1-66b8-4672-9f0e-b37ccc7f61b8" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/README.md" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/config/docker/docker-compose.yml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/config/docker/docker-compose-dev.yml" afterPath="$PROJECT_DIR$/config/docker/docker-compose-drupal.yml" />
+      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,18 +21,18 @@
       <file leaf-file-name="docker-compose-drupal.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/docker/docker-compose-drupal.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="24" column="28" lean-forward="false" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+            <state relative-caret-position="162">
+              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="10" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="settings.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/drupal/web/sites/default/settings.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="669">
-              <caret line="783" column="23" lean-forward="false" selection-start-line="783" selection-start-column="23" selection-end-line="783" selection-end-column="23" />
+              <caret line="783" column="25" lean-forward="true" selection-start-line="783" selection-start-column="25" selection-end-line="783" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -62,11 +62,21 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="180">
-                <caret line="10" column="59" lean-forward="false" selection-start-line="10" selection-start-column="59" selection-end-line="10" selection-end-column="59" />
+              <first_editor relative-caret-position="36">
+                <caret line="2" column="62" lean-forward="true" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="62" />
                 <folding />
               </first_editor>
               <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="docker-compose.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/docker/docker-compose.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -76,16 +86,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="288">
               <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Dockerfile" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/docker/dockerfiles/mysql/Dockerfile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -147,9 +147,10 @@
         <option value="$PROJECT_DIR$/config/docker/docker-compose-prod-build.yml" />
         <option value="$PROJECT_DIR$/Makefile" />
         <option value="$PROJECT_DIR$/drupal/web/robots.txt" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/config/docker/docker-compose-drupal.yml" />
         <option value="$PROJECT_DIR$/drupal/web/sites/default/settings.php" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/config/docker/docker-compose.yml" />
       </list>
     </option>
   </component>
@@ -341,28 +342,8 @@
             <path>
               <item name="docker" type="b2602c69:ProjectViewProjectNode" />
               <item name="docker" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="drupal" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="docker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="docker" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="drupal" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="docker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="docker" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="drupal" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sites" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="docker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="docker" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="drupal" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sites" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="default" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -377,16 +358,16 @@
     <property name="ignore_missing_gitignore" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/config/docker" />
+      <recent name="$PROJECT_DIR$/config/docker/dockerfiles/prod" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/config/docker/dockerfiles/prod/httpd" />
       <recent name="$PROJECT_DIR$/config/docker/dockerfiles" />
       <recent name="$PROJECT_DIR$/config/docker" />
       <recent name="$PROJECT_DIR$/config" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/config/docker" />
-      <recent name="$PROJECT_DIR$/config/docker/dockerfiles/prod" />
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -415,12 +396,12 @@
       <option name="presentableId" value="Default" />
       <updated>1573738992495</updated>
       <workItem from="1573738993822" duration="24027000" />
-      <workItem from="1574352160267" duration="2134000" />
+      <workItem from="1574352160267" duration="2325000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26161000" />
+    <option name="totallyTimeSpent" value="26352000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
@@ -584,17 +565,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="180">
-            <caret line="10" column="59" lean-forward="false" selection-start-line="10" selection-start-column="59" selection-end-line="10" selection-end-column="59" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/docker/dockerfiles/httpd/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -603,18 +573,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/docker/docker-compose-drupal.yml">
+    <entry file="file://$PROJECT_DIR$/drupal/web/sites/default/settings.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="24" column="28" lean-forward="false" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+        <state relative-caret-position="669">
+          <caret line="783" column="25" lean-forward="true" selection-start-line="783" selection-start-column="25" selection-end-line="783" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/drupal/web/sites/default/settings.php">
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="36">
+            <caret line="2" column="62" lean-forward="true" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="62" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/docker/docker-compose-drupal.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="669">
-          <caret line="783" column="23" lean-forward="false" selection-start-line="783" selection-start-column="23" selection-end-line="783" selection-end-column="23" />
+        <state relative-caret-position="162">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="10" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/docker/docker-compose.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
           <folding />
         </state>
       </provider>
