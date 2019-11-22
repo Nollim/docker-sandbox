@@ -10,6 +10,14 @@ services:
       - "traefik.enable=true"
       - "traefik.http.routers.whoami.rule=Host(`drupal.wework`)"
 
+  mysql:
+    image: mysql:5.6
+    environment:
+      MYSQL_ROOT_PASSWORD: drupal
+      MYSQL_DATABASE: drupal
+      MYSQL_USER: drupal
+      MYSQL_PASSWORD: drupal
+
   traefik:
     image: traefik
     command:
