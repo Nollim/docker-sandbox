@@ -2,8 +2,7 @@ version: '3'
 
 services:
 
-  whoami:
-    image:
-      jwilder/whoami
+  apache-drupal:
+    image: drupal:8.7.10-apache
     ports:
-      - 8000:8000
+      - 80:80
