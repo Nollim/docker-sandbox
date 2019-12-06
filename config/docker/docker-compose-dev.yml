@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  php:
+  httpd:
     build:
       context: ../../
       dockerfile: config/docker/dockerfiles/httpd/Dockerfile
@@ -12,7 +12,23 @@ services:
     restart: "always"
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.whoami.rule=Host(`drupal.wework`)"
+      - "traefik.http.routers.httpd.rule=Host(`drupal.wework`)"
+
+  php:
+    build:
+      context: ../../
+      dockerfile: config/docker/dockerfiles/php/Dockerfile
+    volumes:
+      - ../../drupal/:/var/www/html
+
+  drush:
+    build:
+      context: ../../
+      dockerfile: config/docker/dockerfiles/httpd/Dockerfile
+    volumes:
+      - ../../drupal/:/var/www/html
+    entrypoint:
+      - ./vendor/bin/drush
 
   mysql:
     build:
@@ -26,6 +42,15 @@ services:
     restart: always
     labels:
       - "traefik.enable=false"
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.phpmyadmin.rule=Host(`drupal.pma`)"
 
   traefik:
     image: traefik

@@ -18,6 +18,15 @@ services:
       MYSQL_USER: drupal
       MYSQL_PASSWORD: drupal
 
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.whoami.rule=Host(`drupal.pma`)"
+
   traefik:
     image: traefik
     command:

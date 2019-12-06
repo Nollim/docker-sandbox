@@ -1,8 +1,11 @@
 export PROJECT_ROOT ?= $(shell pwd)
 export CI_PROJECT_NAME ?= drupal-wework
 
+args = `arg="$(filter-out $@,$(MAKECMDGOALS))" && echo $${arg:-${1}}`
+
 docker-compose-dev-up:
-	docker-compose -f ${PROJECT_ROOT}/config/docker/docker-compose-dev.yml up -d
+	docker-compose -f ${PROJECT_ROOT}/config/docker/docker-compose-dev.yml up -d --remove-orphans
+	sensible-browser http://drupal.wework
 
 docker-compose-dev-down:
 	docker-compose -f ${PROJECT_ROOT}/config/docker/docker-compose-dev.yml down -v
@@ -29,3 +32,6 @@ docker-commit:
 	@make -s docker-compose-prod-build-up
 	docker container commit docker_php_1 nollim/drupal
 	docker push nollim/drupal
+
+drush:
+	@docker-compose -f ${PROJECT_ROOT}/config/docker/docker-compose-dev.yml run --rm drush $(call args)
