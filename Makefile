@@ -1,7 +1,12 @@
 export PROJECT_ROOT ?= $(shell pwd)
 export CI_PROJECT_NAME ?= drupal-wework
 
-args = `arg="$(filter-out $@,$(MAKECMDGOALS))" && echo $${arg:-${1}}`
+SUPPORTED_COMMANDS := docker-compose-dev-up drush cache-clear composer-require
+SUPPORTS_MAKE_ARGS := $(findstring $(firstword $(MAKECMDGOALS)), $(SUPPORTED_COMMANDS))
+ifneq "$(SUPPORTS_MAKE_ARGS)" ""
+  COMMAND_ARGS := $(wordlist 2,$(words $(MAKECMDGOALS)),$(MAKECMDGOALS))
+  $(eval $(COMMAND_ARGS):;@:)
+endif
 
 docker-compose-dev-up:
 	docker-compose -f ${PROJECT_ROOT}/config/docker/docker-compose-dev.yml up -d --remove-orphans
@@ -34,4 +39,4 @@ docker-commit:
 	docker push nollim/drupal
 
 drush:
-	@docker-compose -f ${PROJECT_ROOT}/config/docker/docker-compose-dev.yml run --rm drush $(call args)
+	@docker-compose -f ${PROJECT_ROOT}/config/docker/docker-compose-dev.yml run --rm drush $(COMMAND_ARGS)
