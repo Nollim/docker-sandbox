@@ -6,7 +6,7 @@ services:
       context: ../../
       dockerfile: config/docker/dockerfiles/httpd/Dockerfile
     volumes:
-      - ../../drupal/:/var/www/html
+      - ../../drupal/:/usr/local/apache2/htdocs
     ports:
       - 80
     restart: "always"
@@ -24,7 +24,7 @@ services:
   drush:
     build:
       context: ../../
-      dockerfile: config/docker/dockerfiles/httpd/Dockerfile
+      dockerfile: config/docker/dockerfiles/php/Dockerfile
     volumes:
       - ../../drupal/:/var/www/html
     entrypoint:
