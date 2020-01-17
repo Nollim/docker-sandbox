@@ -40,3 +40,6 @@ docker-commit:
 
 drush:
 	@docker-compose -f ${PROJECT_ROOT}/config/docker/docker-compose-dev.yml run --rm drush $(COMMAND_ARGS)
+
+composer:
+	@docker-compose -f ${PROJECT_ROOT}/config/docker/docker-compose-dev.yml run --rm php composer $(COMMAND_ARGS)
