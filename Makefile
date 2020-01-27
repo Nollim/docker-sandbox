@@ -35,8 +35,14 @@ docker-commit:
 	@make -s docker-compose-prod-down
 	@make -s docker-compose-prod-build-down
 	@make -s docker-compose-prod-build-up
-	docker container commit docker_php_1 nollim/drupal
-	docker push nollim/drupal
+	docker container commit docker_php_1 nollim/php
+	docker push nollim/php
+	docker container commit docker_httpd_1 nollim/httpd
+	docker push nollim/httpd
+	docker container commit docker_elasticsearch_1 nollim/elasticsearch
+	docker push nollim/elasticsearch
+	docker container commit docker_mysql_1 nollim/mysql
+	docker push nollim/mysql
 
 drush:
 	@docker-compose -f ${PROJECT_ROOT}/config/docker/docker-compose-dev.yml run --rm drush $(COMMAND_ARGS)
