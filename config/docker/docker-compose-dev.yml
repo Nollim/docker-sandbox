@@ -52,6 +52,16 @@ services:
       - "traefik.enable=true"
       - "traefik.http.routers.phpmyadmin.rule=Host(`drupal.pma`)"
 
+  varnish:
+    image: varnish:6.2
+    volumes:
+      - ../../config/varnish/vcl:/etc/varnish/
+    ports:
+      - "8081:80"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.varnish.rule=Host(`drupal.varnish`)"
+
   traefik:
     image: traefik
     command:
