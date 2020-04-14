@@ -1,0 +1,13 @@
+{
+    "name": "big_pipe_poc",
+    "type": "drupal-module",
+    "description": "My Awesome Module",
+    "keywords": [
+    ],
+    "homepage": "https://www.drupal.org/project/big_pipe_poc",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/big_pipe_poc",
+        "source": "http://cgit.drupalcode.org/big_pipe_poc",
+    },
+}

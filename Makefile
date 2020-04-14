@@ -1,7 +1,7 @@
 export PROJECT_ROOT ?= $(shell pwd)
 export CI_PROJECT_NAME ?= drupal-wework
 
-SUPPORTED_COMMANDS := docker-compose-dev-up drush cache-clear composer-require drupal-bin
+SUPPORTED_COMMANDS := docker-compose-dev-up drush cache-clear composer-require drupal-bin drupal-cmd
 SUPPORTS_MAKE_ARGS := $(findstring $(firstword $(MAKECMDGOALS)), $(SUPPORTED_COMMANDS))
 ifneq "$(SUPPORTS_MAKE_ARGS)" ""
   COMMAND_ARGS := $(wordlist 2,$(words $(MAKECMDGOALS)),$(MAKECMDGOALS))
@@ -44,8 +44,12 @@ docker-commit:
 	docker container commit docker_mysql_1 nollim/mysql
 	docker push nollim/mysql
 
+
+drupal-cmd:
+	@docker-compose -f ${PROJECT_ROOT}/config/docker/docker-compose-dev.yml run --rm php ./vendor/bin/drupal $(COMMAND_ARGS)
+
 drush:
-	@docker-compose -f ${PROJECT_ROOT}/config/docker/docker-compose-dev.yml run --rm drush $(COMMAND_ARGS)
+	@docker-compose -f ${PROJECT_ROOT}/config/docker/docker-compose-dev.yml run --rm php ./vendor/bin/drush $(COMMAND_ARGS)
 
 composer:
 	@docker-compose -f ${PROJECT_ROOT}/config/docker/docker-compose-dev.yml run --rm php composer $(COMMAND_ARGS)

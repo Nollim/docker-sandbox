@@ -21,15 +21,6 @@ services:
     volumes:
       - ../../drupal/:/var/www/html
 
-  drush:
-    build:
-      context: ../../
-      dockerfile: config/docker/dockerfiles/php/Dockerfile
-    volumes:
-      - ../../drupal/:/var/www/html
-    entrypoint:
-      - ./vendor/bin/drush
-
   mysql:
     build:
       context: ../../

@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains big_pipe_poc.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function big_pipe_poc_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the big_pipe_poc module.
+    case 'help.page.big_pipe_poc':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('My Awesome Module') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function big_pipe_poc_theme() {
+  return [
+    'big_pipe_poc' => [
+      'render element' => 'children',
+    ],
+  ];
+}
